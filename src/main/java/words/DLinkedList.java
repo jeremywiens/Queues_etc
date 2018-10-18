@@ -4,6 +4,8 @@ public class DLinkedList<T> {
     NodeDLL head;
     NodeDLL tail;
     int n = 0;
+    boolean reversed = false;
+
     public DLinkedList(){
         head.previous = tail;
         head.next = tail;
@@ -21,7 +23,7 @@ public class DLinkedList<T> {
         return node;
     }
     private NodeDLL addNode(NodeDLL node){
-        NodeDLL previous = tail.previous;
+        NodeDLL previous = tail.previous(reversed);
         previous.next = node;
         node.previous = previous;
         node.next = tail;
@@ -31,15 +33,15 @@ public class DLinkedList<T> {
     }
 
     public NodeDLL pop() {
-        NodeDLL node = head.next;
-        head.next = node.next;
+        NodeDLL node = head.next(reversed);
+        head.next = node.next(reversed);
         node.next.previous = head;
         n--;
         return node;
     }
 
     public NodeDLL getNode(T data){
-        NodeDLL node = head.next;
+        NodeDLL node = head.next(reversed);
         while(true){
             if(node.getData() == data){
                 return node;
@@ -47,18 +49,27 @@ public class DLinkedList<T> {
             if(node.next == tail){
                 return null;
             }
-            node = node.next;
+            node = node.next(reversed);
         }
     }
     public NodeDLL swap(T data){
         NodeDLL node = getNode(data);
-        swap(node);
+        return swap(node);
     }
+
+    public boolean reverse(){
+        NodeDLL temp = tail;
+        tail = head;
+        head = temp;
+        reversed = !reversed;
+        return reversed;
+    }
+
     public NodeDLL swap(NodeDLL node){
 
         NodeDLL previous = head;
-        NodeDLL current = head.next;
-        NodeDLL next = current.next;
+        NodeDLL current = head.next(reversed);
+        NodeDLL next = current.next(reversed);
 
         if(n < 2){
             return null;
@@ -69,11 +80,11 @@ public class DLinkedList<T> {
             }
             previous = current;
             current = next;
-            next = next.next;
+            next = next.next(reversed);
         }
         previous.next = next;
         next.previous = previous;
-        current.next = next.next;
+        current.next = next.next(reversed);
         next.next = current;
         current.previous = next;
         return next;

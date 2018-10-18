@@ -18,4 +18,16 @@ public class NodeDLL<T> {
     public T getData() {
         return data;
     }
+    public NodeDLL next(boolean reversed){
+        if(reversed == true){
+            return previous;
+        }
+        return next;
+    }
+    public NodeDLL previous(boolean reversed){
+        if(reversed == true){
+            return previous;
+        }
+        return next;
+    }
 }
