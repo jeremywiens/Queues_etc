@@ -20,8 +20,9 @@ public class Bag<T> extends DLinkedList<T>{
     }
 
     public NodeDLL remove(NodeDLL node, boolean inBag){
-       node.previous = node.next;
+       node.previous.next = node.next;
        node.next.previous = node.previous;
+       n--;
        return node;
     }
 
@@ -33,7 +34,7 @@ public class Bag<T> extends DLinkedList<T>{
     }
 
     public NodeDLL find(NodeDLL node, T data){
-        while(true){
+        while(node != tail){
             if(node.getData() == data){
                 return node;
             }
@@ -42,18 +43,22 @@ public class Bag<T> extends DLinkedList<T>{
             }
             node = node.next(reversed);
         }
+        return null;
     }
 
-    public Bag<T> findAll(T data){
-       Bag<T> bag = new Bag<>();
-
+    public NodeDLL[] findAll(T data){
+       NodeDLL bag[] = new NodeDLL[this.size()];
+       int x = 0;
        NodeDLL node = head;
-       while(node != null){
-           node = find(node, data);
-           if(node != null){
-               bag.add(node);
+       while(node != tail){
+           if(node.getData() == data){
+               bag[x] = node;
+                x++;
            }
+           node = node.next(reversed);
+
        }
+
 
        return bag;
        

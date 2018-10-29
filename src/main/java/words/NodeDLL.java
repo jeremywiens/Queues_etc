@@ -18,6 +18,25 @@ public class NodeDLL<T> {
     public T getData() {
         return data;
     }
+
+    public NodeDLL setNext(boolean reversed, NodeDLL node){
+        if(reversed == true){
+            this.previous = node;
+        }
+        else {
+            this.next = node;
+        }
+        return node;
+    }
+    public NodeDLL setPrevious(boolean reversed, NodeDLL node){
+        if(reversed == true){
+            this.next = node;
+        }
+        else {
+            this.previous = node;
+        }
+        return node;
+    }
     public NodeDLL next(boolean reversed){
         if(reversed == true){
             return previous;

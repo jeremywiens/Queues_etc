@@ -24,18 +24,18 @@ public class DLinkedList<T> {
     }
     private NodeDLL addNode(NodeDLL node){
         NodeDLL previous = tail.previous(reversed);
-        previous.next = node;
-        node.previous = previous;
-        node.next = tail;
-        tail.previous = node;
+        previous.setNext(reversed, node);
+        node.setPrevious(reversed, previous);
+        node.setNext(reversed, tail);
+        tail.setPrevious(reversed, node);
         n++;
         return node;
     }
 
     public NodeDLL pop() {
         NodeDLL node = head.next(reversed);
-        head.next = node.next(reversed);
-        node.next.previous = head;
+        head.setNext(reversed, node.next(reversed));
+        node.next(reversed).setPrevious(reversed, head);
         n--;
         return node;
     }
@@ -46,7 +46,7 @@ public class DLinkedList<T> {
             if(node.getData() == data){
                 return node;
             }
-            if(node.next == tail){
+            if(node.next(reversed) == tail){
                 return null;
             }
             node = node.next(reversed);
@@ -75,20 +75,25 @@ public class DLinkedList<T> {
             return null;
         }
         while(current != node){
-            if(next == tail){
+            if(next.next(reversed) == tail){
                 return null;
             }
             previous = current;
             current = next;
             next = next.next(reversed);
         }
-        previous.next = next;
-        next.previous = previous;
-        current.next = next.next(reversed);
-        next.next = current;
-        current.previous = next;
+        previous.setNext(reversed, next);
+        next.setPrevious(reversed, previous);
+        current.setNext(reversed, next.next(reversed));
+        next.next(reversed).setPrevious(reversed, current);
+        next.setNext(reversed, current);
+        current.setPrevious(reversed, next);
         return next;
 
+    }
+
+    public int size(){
+        return n;
     }
 
     public String toString(){
