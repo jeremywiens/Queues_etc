@@ -4,7 +4,7 @@ public class NodeDLL<T> {
 
     NodeDLL next;
     NodeDLL previous;
-    private T data;
+    protected T data;
 
     public NodeDLL(){
 
@@ -24,10 +24,14 @@ public class NodeDLL<T> {
         }
         return next;
     }
+    public String toString(){
+        String node = data.toString();
+        return node;
+    }
     public NodeDLL previous(boolean reversed){
         if(reversed == true){
-            return previous;
+            return next;
         }
-        return next;
+        return previous;
     }
 }

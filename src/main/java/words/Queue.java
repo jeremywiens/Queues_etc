@@ -10,9 +10,15 @@ public class Queue {
 
     }
 
-    public int add(int x){
 
+    public int add(int x){
         Node u = new Node(x);
+        add(u);
+        return x;
+    }
+    public Node add(Node u){
+
+
         if(n == 0){
             head.next = u;
             u.next = tail;
@@ -27,15 +33,14 @@ public class Queue {
             previous.next = u;
         }
         n++;
-        return x;
+        return u;
     }
 
     public Node remove(){
         if (n == 0) {
             return null;
         }
-        Node u = new Node();
-        u = head.next;
+        Node u = head.next;
         head.next = u.next;
         n--;
         return u;

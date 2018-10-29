@@ -1,8 +1,8 @@
 package words;
 
 public class DLinkedList<T> {
-    NodeDLL head;
-    NodeDLL tail;
+    NodeDLL head = new NodeDLL();
+    NodeDLL tail = new NodeDLL();
     int n = 0;
     boolean reversed = false;
 
@@ -89,5 +89,16 @@ public class DLinkedList<T> {
         current.previous = next;
         return next;
 
+    }
+
+    public String toString(){
+        String DLL = "[";
+        NodeDLL node = head.next(reversed);
+        while(node != tail){
+            DLL = DLL + node.toString() + ", ";
+            node = node.next(reversed);
+        }
+        DLL = DLL + "]";
+        return DLL;
     }
 }

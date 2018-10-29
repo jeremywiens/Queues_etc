@@ -1,22 +1,22 @@
 package words;
 
 
-public class Node {
+public class Node<T> {
 
     Node next;
-    int x;
+    protected T data;
 
     public Node(){
 
     }
-    public Node(int x){
+    public Node(T data){
 
-        this.x = x;
+        this.data = data;
 
 
     }
 
-    public int getX() {
-        return x;
+    public T getX() {
+        return data;
     }
 }

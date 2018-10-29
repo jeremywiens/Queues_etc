@@ -2,23 +2,29 @@ package words;
 
 public class PriorityQueue extends Queue {
 
+    protected PriorityNode head = new PriorityNode();
+    protected PriorityNode tail = new PriorityNode();
+
     public PriorityQueue(){
 
     }
 
     @Override
+    public Node add(Node u){
+        int x = (int)u.getX();
+        add(x);
+        return u;
+    }
+    @Override
     public int add(int x){
-        Node u = new Node(x);
+        PriorityNode u = new PriorityNode(x);
         if(n == 0){
             head.next = u;
             u.next = tail;
         }
         else {
-            Node node = head;
-//            if(u.x < node.x){
-//                u.next = head;
-//                u = head;
-//            }
+            PriorityNode node = head;
+
             boolean done = false;
             while (!done) {
                 if (u.x <= node.next.x) {
@@ -45,7 +51,7 @@ public class PriorityQueue extends Queue {
         if(n == 0){
             return null;
         }
-        Node node = head.next;
+        PriorityNode node = head.next;
         head.next = node.next;
         n--;
         return node;

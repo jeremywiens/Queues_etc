@@ -19,10 +19,10 @@ public class Stack {
             return null;
         }
         while (queue1.size() > 1) {
-            queue2.add(queue1.remove().x);
+            queue2.add(queue1.remove());
         }
-        Queue temp = new Queue();
-        temp = queue1;
+
+        Queue temp = queue1;
         queue1 = queue2;
         queue2 = temp;
         assert queue2.size() == 1;
