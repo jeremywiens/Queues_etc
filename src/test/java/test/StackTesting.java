@@ -23,7 +23,9 @@ public class StackTesting {
         assertEquals(4, stack.pop().getX());
         assertEquals(5, stack.pop().getX());
         assertTrue(stack.size() == 0);
-
+        assertTrue(stack.pop() == null);
+        stack.push(3);
+        assertEquals(3, stack.pop().getX());
 
 
 

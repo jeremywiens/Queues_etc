@@ -16,7 +16,7 @@ public class PriorityQueue extends Queue {
         return u;
     }
     @Override
-    public int add(int x){
+    public PriorityNode add(int x){
         PriorityNode u = new PriorityNode(x);
         if(n == 0){
             head.next = u;
@@ -42,7 +42,7 @@ public class PriorityQueue extends Queue {
             }
         }
         n++;
-        return x;
+        return u;
     }
 
 

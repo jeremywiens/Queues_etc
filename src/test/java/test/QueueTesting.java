@@ -37,4 +37,44 @@ public class QueueTesting {
 
 
     }
+
+    @Test
+    public void SwapTest(){
+        Queue que = new Queue();
+
+        Node u1 = que.add(5);
+        Node u2 = que.add(3);
+
+        que.swap(u1);
+        assertTrue(que.size() == 2);
+        assertEquals(3, que.remove().getX());
+        assertTrue(que.size() == 1);
+        assertEquals(null, que.swap(u2));
+        assertEquals(5, que.remove().getX());
+
+        Node u3 = que.add(5);
+        Node u4 = que.add(3);
+        Node u5 = que.add(9);
+        Node u9 = que.add(25);
+        Node u10 = que.add(7);
+
+        que.swap(u10);
+
+        que.swap(u3);
+        que.swap(u3);
+        que.swap(u4);
+        assertEquals(9, que.remove().getX());
+        que.swap(u5);
+        que.swap(u9);
+        assertEquals(3, que.remove().getX());
+        assertEquals(5, que.remove().getX());
+        assertEquals(7, que.remove().getX());
+        assertEquals(25, que.remove().getX());
+        assertEquals(null, que.remove());
+
+
+
+
+
+    }
 }

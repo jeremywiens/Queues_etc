@@ -11,10 +11,10 @@ public class Queue {
     }
 
 
-    public int add(int x){
+    public Node add(int x){
         Node u = new Node(x);
         add(u);
-        return x;
+        return u;
     }
     public Node add(Node u){
 
