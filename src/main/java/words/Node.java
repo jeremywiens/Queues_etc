@@ -3,7 +3,7 @@ package words;
 
 public class Node<T> {
 
-    Node next;
+    protected Node next;
     protected T data;
 
     public Node(){

@@ -1,8 +1,8 @@
 package words;
 
 public class DLinkedList<T> {
-    NodeDLL head = new NodeDLL();
-    NodeDLL tail = new NodeDLL();
+    protected NodeDLL head = new NodeDLL();
+    protected NodeDLL tail = new NodeDLL();
     int n = 0;
     boolean reversed = false;
 

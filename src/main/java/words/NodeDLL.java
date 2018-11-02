@@ -2,8 +2,8 @@ package words;
 
 public class NodeDLL<T> {
 
-    NodeDLL next;
-    NodeDLL previous;
+    protected NodeDLL next;
+    protected NodeDLL previous;
     protected T data;
 
     public NodeDLL(){

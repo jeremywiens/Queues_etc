@@ -6,6 +6,15 @@ import org.junit.Test;
 import words.PriorityQueue;
 import words.*;
 
+/*
+Author: Jeremy Wiens
+Date: Nov. 1, 2019
+Assignment #1 (Comp 272 - Athabasca University)
+
+This is the full testing for the Stack class. It's format can be copied
+to include more test cases.
+ */
+
 public class StackTesting {
     @Test
     public void test() {

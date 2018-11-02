@@ -4,9 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import words.PriorityQueue;
 import words.*;
 
+/*
+Author: Jeremy Wiens
+Date: Nov. 1, 2019
+Assignment #1 (Comp 272 - Athabasca University)
+
+This is the full testing for the Doubly linked list. It includes testing for the
+swap method and the reverse method. This format can be copied in order to test
+further cases.
+ */
 
 public class DoubleLinkedListTesting {
     @Test
