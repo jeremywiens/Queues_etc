@@ -2,12 +2,12 @@ package data_structures;
 
 /**
  * Author: Jeremy Wiens
- Date: Nov. 1, 2019
- Assignment #1 (Comp 272 - Athabasca University)
- Question 1 a
-
- Priority Queue - This class extends queue. It requires all nodes be of
- type Integer to order the elements within the queue.
+ * Date: Nov. 1, 2018
+ * Assignment #1 (Comp 272 - Athabasca University)
+ * Question 1 a
+ *
+ * Priority Queue - This class extends queue. It requires all nodes be of
+ * type Integer to order the elements within the queue.
  */
 public class PriorityQueue extends Queue<Integer> {
 
@@ -21,7 +21,7 @@ public class PriorityQueue extends Queue<Integer> {
     /**
      * Priority Queue constructor - creates an empty priority queue.
      */
-    public PriorityQueue(){
+    public PriorityQueue() {
 
     }
 
@@ -33,8 +33,8 @@ public class PriorityQueue extends Queue<Integer> {
      * @return the PriorityNode that is added to the queue.
      */
     @Override
-    public Node add(Node u){
-        int x = (int)u.getX();
+    public Node add(Node u) {
+        int x = (int) u.getX();
         PriorityNode node = add(x);
         return node;
     }
@@ -47,17 +47,15 @@ public class PriorityQueue extends Queue<Integer> {
      * @return the PriorityNode that is added to the queue.
      */
     @Override
-    public PriorityNode add(int x){
+    public PriorityNode add(int x) {
         //Create the priorty node to add
         PriorityNode u = new PriorityNode(x);
 
         //If the queue is empty, add node after head and before tail.
-        if(n == 0){
+        if (n == 0) {
             head.next = u;
             u.next = tail;
-        }
-
-        else {
+        } else {
             PriorityNode node = head;
 
             boolean done = false;
@@ -90,8 +88,8 @@ public class PriorityQueue extends Queue<Integer> {
      * @return the PriorityNode which is being deleted and has the minimum
      * value within the queue. Returns null if the queue is empty.
      */
-    public PriorityNode deleteMin(){
-        if(n == 0){
+    public PriorityNode deleteMin() {
+        if (n == 0) {
             return null;
         }
         PriorityNode node = head.next;

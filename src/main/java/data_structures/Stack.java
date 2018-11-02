@@ -3,12 +3,12 @@ package data_structures;
 
 /**
  * Author: Jeremy Wiens
- Date: Nov. 1, 2019
- Assignment #1 (Comp 272 - Athabasca University)
- Question 1 b.
-
- Stack - This is a implementation of stack using two queues. This stack is FIFO.
- This is a superclass. The nodes are of generic type T.
+ * Date: Nov. 1, 2018
+ * Assignment #1 (Comp 272 - Athabasca University)
+ * Question 1 b.
+ *
+ * Stack - This is a implementation of stack using two queues. This stack is FIFO.
+ * This is a superclass. The nodes are of generic type T.
  */
 
 public class Stack {
@@ -77,7 +77,7 @@ public class Stack {
      *
      * @return an integer which is the size of the stack.
      */
-    public int size(){
+    public int size() {
         int x;
         //queue2 will be empty, all nodes are in queue1.
         x = queue1.size();

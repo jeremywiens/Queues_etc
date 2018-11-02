@@ -7,7 +7,7 @@ import org.junit.Test;
 
 /*
 Author: Jeremy Wiens
-Date: Nov. 1, 2019
+Date: Nov. 1, 2018
 Assignment #1 (Comp 272 - Athabasca University)
 
 This is the full testing for the Bag class. It's format can be copied
@@ -35,12 +35,13 @@ public class BagTesting {
         bag.add(5);
         bag.add(49);
         int expected = bag.size() - 2;
+        assertEquals(3, bag.findAll(5).length);
         assertTrue((int)bag.findAll(5)[2].getData() == 5);
-        assertTrue(bag.findAll(5)[3] == null);
+        //assertTrue(bag.findAll(5)[3] == null);
         bag.remove(5);
         bag.add(26);
         assertTrue((int)bag.findAll(5)[1].getData() == 5);
-        assertTrue(bag.findAll(5)[2] == null);
+        //assertTrue(bag.findAll(5)[2] == null);
         assertEquals(26, bag.find(26).getData());
     }
 }

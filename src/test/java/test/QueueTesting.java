@@ -7,7 +7,7 @@ import org.junit.Test;
 
 /*
 Author: Jeremy Wiens
-Date: Nov. 1, 2019
+Date: Nov. 1, 2018
 Assignment #1 (Comp 272 - Athabasca University)
 
 This is the full testing for the singly linked list implementation of the queue.

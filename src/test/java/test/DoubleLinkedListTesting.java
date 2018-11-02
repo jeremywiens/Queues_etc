@@ -8,7 +8,7 @@ import org.junit.Test;
 
 /*
 Author: Jeremy Wiens
-Date: Nov. 1, 2019
+Date: Nov. 1, 2018
 Assignment #1 (Comp 272 - Athabasca University)
 
 This is the full testing for the Doubly linked list. It includes testing for the
@@ -20,8 +20,8 @@ public class DoubleLinkedListTesting {
     @Test
     public void test() {
         DLinkedList<Integer> DLL = new DLinkedList<>();
-        NodeDLL<Integer> node1 = new NodeDLL<>();
-        NodeDLL<Integer> node2 = new NodeDLL<>();
+        NodeDLL<Integer> node1;
+        NodeDLL<Integer> node2;
 
         node1 = DLL.add(50);
         DLL.add(43);
