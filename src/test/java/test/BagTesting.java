@@ -2,9 +2,8 @@ package test;
 
 import static org.junit.Assert.*;
 
+import data_structures.Bag;
 import org.junit.Test;
-
-import words.*;
 
 /*
 Author: Jeremy Wiens

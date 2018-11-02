@@ -1,4 +1,4 @@
-package words;
+package data_structures;
 
 /**
  Author: Jeremy Wiens

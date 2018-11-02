@@ -3,8 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import words.PriorityQueue;
-import words.*;
+import data_structures.PriorityQueue;
 
 
 /*

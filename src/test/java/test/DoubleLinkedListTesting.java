@@ -2,9 +2,9 @@ package test;
 
 import static org.junit.Assert.*;
 
+import data_structures.DLinkedList;
+import data_structures.NodeDLL;
 import org.junit.Test;
-
-import words.*;
 
 /*
 Author: Jeremy Wiens

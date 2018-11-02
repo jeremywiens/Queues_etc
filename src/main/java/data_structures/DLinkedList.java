@@ -1,4 +1,4 @@
-package words;
+package data_structures;
 
 public class DLinkedList<T> {
     protected NodeDLL head = new NodeDLL();

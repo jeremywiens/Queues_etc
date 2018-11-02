@@ -1,10 +1,9 @@
 package test;
 import static org.junit.Assert.*;
 
+import data_structures.Node;
+import data_structures.Queue;
 import org.junit.Test;
-
-import words.PriorityQueue;
-import words.*;
 
 /*
 Author: Jeremy Wiens
